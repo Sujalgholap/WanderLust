@@ -17,9 +17,9 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
-app.get("/", (req, res) => {
-  res.send("Heyy, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Heyy, I am root");
+// });
 
 app.get("/testListing", async (req,res)=>{
     let sampleListing = new Listing({
