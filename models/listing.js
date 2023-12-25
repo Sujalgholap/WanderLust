@@ -16,7 +16,7 @@ const listingSchema = new Schema({
         ? "https://media.istockphoto.com/id/1395878839/photo/despair.webp?b=1&s=170667a&w=0&k=20&c=SZqDiMhFlvtXvtCHd5JSNgyvmKpt55LPZXMGwUc_J0k="
         : v,
   },
-  price: Number,
+  price : Number,
   location: String,
   country: String,
 });
