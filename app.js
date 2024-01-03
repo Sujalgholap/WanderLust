@@ -10,6 +10,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const {listingSchema, reviewSchema} = require("./schema.js");
 const { error } = require("console");
 const Review = require("./models/review.js");
+const review = require("./models/review.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -70,7 +71,7 @@ app.get("/listings/new",(req,res)=>{
 //Show Route
 app.get("/listings/:id", wrapAsync(async (req,res)=>{
   let {id} = req.params;
-  const listing = await Listing.findById(id);
+  const listing = await Listing.findById(id).populate("reviews");
   res.render("listings/show.ejs", {listing});
 }));
 
