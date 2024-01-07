@@ -48,13 +48,14 @@ app.get("/", (req, res) => {
   res.send("Heyy, I am root");
 });
 
-app.use((req,res,next)=>{
-  
-})
-
 app.use(session(sessionOptions));
 app.use(flash());
 
+
+app.use((req,res,next)=>{
+  res.locals.success = req.flash("success");
+  next();
+});
 
 app.use("/listings",listings);
 app.use("/listings/:id/reviews", reviews);
