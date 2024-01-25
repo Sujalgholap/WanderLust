@@ -5,7 +5,6 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
-// const { error } = require("console");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
@@ -68,16 +67,6 @@ app.use((req,res,next)=>{
   res.locals.currUser = req.user;
   next();
 });
-
-// app.get("/demouser", async(req,res)=>{
-//   let fakeUser = new User({
-//     email : "sujal@gmail.com",
-//     username : "sujl",
-//   });
-
-//   let registeredUser = await User.register(fakeUser, "helloworld");
-//   res.send(registeredUser);
-// });
 
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
