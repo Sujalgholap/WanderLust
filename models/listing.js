@@ -9,13 +9,8 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    type: String,
-    default:
-      "https://media.istockphoto.com/id/1395878839/photo/despair.webp?b=1&s=170667a&w=0&k=20&c=SZqDiMhFlvtXvtCHd5JSNgyvmKpt55LPZXMGwUc_J0k=",
-    set: (v) =>
-      v === ""
-        ? "https://media.istockphoto.com/id/1395878839/photo/despair.webp?b=1&s=170667a&w=0&k=20&c=SZqDiMhFlvtXvtCHd5JSNgyvmKpt55LPZXMGwUc_J0k="
-        : v,
+   url : String,
+   filename : String,
   },
   price : Number,
   location: String,
