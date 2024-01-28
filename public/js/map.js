@@ -1,6 +1,11 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
 container: 'map', // container ID
-center: [-73.935242, 40.730610], // starting position [lng, lat]
-zoom: 9 // starting zoom
+center: coordinates, // starting position [lng, lat]
+zoom: 8 // starting zoom
 });
+
+// Create a default Marker and add it to the map.
+const marker1 = new mapboxgl.Marker({ color : "red" })
+.setLngLat(coordinates)
+.addTo(map);
